@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // var nombre = "pepe";
+        // var edad = "34";
+
+        const persona2 = {
+            nombre:"Miguel",
+            edad:15
+        }
+
+        const persona = {
+            nombre: "Juan",
+            edad: 30,
+            saludar: function(){
+                console.log(`Hola, me llamo ${this.nombre} y tengo ${this.edad} años`);
+            },
+            sumar: function(a,b){
+                return a+b;
+            }
+        }
+
+        // const persona = {
+        //     nombre: "Juan",
+        //     edad: 30,
+        //     saludar: function(a, b, c){
+        //         console.log(`Hola, me llamo ${this.nombre} y tengo ${this.edad} años ${a} ${b} ${c}`);
+        //     },
+        //     sumar: function(a,b){
+        //         return a+b;
+        //     }
+        // }
+
+        // console.log(persona.sumar(4,5));
+
+        // //guardo referencia del método sumar del objeto persona
+        // const calcular = persona.sumar;
+
+        persona.saludar();
+
+        // console.log(calcular(4,5));
+
+        //persona.saludar("Hola", "Mundo", 34);
+
+        // const saludo = persona.saludar;
+
+        // saludo(); //se pierde la referencia a this(el objeto persona)
+        //Si pongo variables con var con el mismo nombre, en el scope global
+        //Se van a cargar esas variables.
+
+        //saludo.call(persona); //para que se comporte como persona, le paso el contexto
+        //saludo.call(persona2, "Chau", "Mundo", "Cruel");
+        //saludo.apply(persona2, ["algo", "que", "nada"]); //si tuviera función que recibe parámetros, se pasan como array
+
+        //bind agarra un scope y lo enlaza, el this va pegado:
+
+        const saludo = persona.saludar.bind(persona);
+
+        saludo(); //se pierde la referencia a this(el objeto persona)
+    </script>
+    
+</body>
+</html>

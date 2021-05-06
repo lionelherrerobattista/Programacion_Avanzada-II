@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // function sumar(a, b){
+        //     let suma = a + b;
+        //     console.log("La suma es " + suma);
+        //     return suma;
+        // }
+
+        // function cuadrado(a){
+        //     let cuad = a*a;    
+        //     console.log("El cuadrado es " + cuad);
+        //     return cuad;
+        // }
+
+        // function producto(a, b){
+        //     let prod = a * b;
+        //     console.log("El producto es " + prod);
+        //     return prod;
+        // }
+
+        function mostrar(value){
+            console.log("El resultado es", value);
+        }
+
+        // let suma = sumar(4, 3);
+        // let cuad = cuadrado(suma);
+        // let prod = producto(cuad, 10);
+
+        function sumarPromise(a, b){
+
+            return new Promise((resolve, reject) => {
+                let suma;
+                //Simular envío de la info con set timeout
+                setTimeout(() => {
+                    if(typeof a !== "number" || typeof b !== "number") {
+                        reject({mensaje: "Error de parametros"});
+                    } else {
+                        suma = a + b;
+                        console.log("La suma es " + suma);
+                        resolve(suma);
+                    }
+                }, 2000);
+            });            
+        }
+
+        function productoPromise(a, b){
+
+        return new Promise((resolve, reject) => {
+            let producto;
+            //Simular envío de la info con set timeout
+            setTimeout(() => {
+                if(typeof a !== "number" || typeof b !== "number") {
+                    reject({mensaje: "Error de parametros"});
+                } else {
+                    producto = a * b;
+                    console.log("El producto es " + producto);
+                    resolve(producto);
+                }
+            }, 2000);
+        });            
+        }
+
+        function cuadradoPromise(a){
+
+        return new Promise((resolve, reject) => {
+            let cuadrado;
+            //Simular envío de la info con set timeout
+            setTimeout(() => {
+                if(typeof a !== "number") {
+                    reject({mensaje: "Error de parametro"});
+                } else {
+                    cuadrado = a * a;
+                    console.log("El cuadrado es " + cuadrado);
+                    resolve(cuadrado);
+                }
+            }, 2000);
+        });            
+        }
+        
+
+        // mostrar(prod);
+        // console.log( sumarAsinc(4,3));
+        // console.log("fin");
+
+        
+        function realizarOperaciones(){
+            sumarPromise(4, 3)
+            .then(suma => cuadradoPromise(suma))
+            .then(cuadrado => productoPromise(cuadrado, 10))
+            .then(producto => mostrar(producto))
+            .catch((err) => {
+                console.log(err.mensaje);
+            })
+        } 
+
+        realizarOperaciones();
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // function sumar(a, b){
+        //     let suma = a + b;
+        //     console.log("La suma es " + suma);
+        //     return suma;
+        // }
+
+        // function cuadrado(a){
+        //     let cuad = a*a;    
+        //     console.log("El cuadrado es " + cuad);
+        //     return cuad;
+        // }
+
+        // function producto(a, b){
+        //     let prod = a * b;
+        //     console.log("El producto es " + prod);
+        //     return prod;
+        // }
+
+        function mostrar(value){
+            console.log("El resultado es", value);
+        }
+
+        // let suma = sumar(4, 3);
+        // let cuad = cuadrado(suma);
+        // let prod = producto(cuad, 10);
+
+        function sumarAsinc(a, b, callback){
+            let suma;
+            //Simular envío de la info con set timeout
+            setTimeout(() => {
+                suma = a + b;
+                console.log("La suma es " + suma);
+                callback(suma, productoAsinc);
+                
+            }, 2000);
+
+            return suma;
+        }
+
+        function cuadradoAsinc(a, callback){
+            let cuadrado;
+            //Simular envío de la info con set timeout
+            setTimeout(() => {
+                cuadrado = a * a;
+                console.log("El cuadrado es " + cuadrado);
+                callback(cuadrado, 10, mostrar);
+                
+            }, 3000);
+
+            return cuadrado;
+        }
+
+        function productoAsinc(a, b, callback){
+            let producto;
+            //Simular envío de la info con set timeout
+            setTimeout(() => {
+                producto = a * b;
+                console.log("El producto es " + producto);
+                callback(producto);
+                
+            }, 4000);
+
+            return producto;
+        }
+
+        // mostrar(prod);
+        // console.log( sumarAsinc(4,3));
+        // console.log("fin");
+
+        // sumarAsinc(4, 3, cuadradoAsinc);
+        sumarAsinc(4, 3, cuadradoAsinc);
+        
+        
+
+
+
+    </script>
+    
+</body>
+</html>
