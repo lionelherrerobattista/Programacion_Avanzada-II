@@ -1,0 +1,12 @@
+a{
+  margin-left: 1rem;
+}
+
+.active{
+  font-weight: bold;
+  color: blue;
+}
+
+img {
+  height: 400px;
+}

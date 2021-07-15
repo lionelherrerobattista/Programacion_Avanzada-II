@@ -1,0 +1,39 @@
+/* @import-normalize; */
+
+*, *::after, *::before {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  margin-bottom: 2rem;
+}
+
+header > img {
+  width: 400px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: crimson;
+  padding-bottom: 1rem;
+}
+
+.listado{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button > img {
+  width: 50px;
+
+}
+
+.container-nav {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}

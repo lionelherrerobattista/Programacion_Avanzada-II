@@ -1,0 +1,29 @@
+{
+  "chef": [
+    {
+      "id": 1,
+      "nombre": "German",
+      "especialidad": "Vegetales"
+    },
+    {
+      "id": 2,
+      "nombre": "Donato",
+      "especialidad": "Pastas"
+    },
+    {
+      "id": 3,
+      "nombre": "Dolly",
+      "especialidad": "Asado"
+    },
+    {
+      "id": 4,
+      "nombre": "Kristophe",
+      "especialidad": "Croissant"
+    },
+    {
+      "id": 5,
+      "nombre": "Damian",
+      "especialidad": "Macarrons"
+    }
+  ]
+}
