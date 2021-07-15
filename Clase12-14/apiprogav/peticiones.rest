@@ -1,0 +1,11 @@
+GET http://localhost:3000/api/personas
+
+###
+
+POST http://localhost:3000/api/personas
+Content-Type: application/json
+
+{
+    "nombre":"Gaston",
+    "edad":18
+}
